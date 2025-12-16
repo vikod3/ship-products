@@ -31,12 +31,7 @@ export function HeroHeader() {
         data-state={menuState && 'active'}
         className="group fixed z-20 w-full pt-2"
       >
-        <div
-          className={cn(
-            'mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12',
-            scrolled && 'bg-background/50 backdrop-blur-2xl'
-          )}
-        >
+        <div className="px-8 md:px-12 lg:px-16">
           <motion.div
             className={cn(
               'relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0 lg:py-6',
@@ -104,12 +99,12 @@ export function HeroHeader() {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button asChild variant="outline" size="sm">
+                <Button asChild variant="ghost" size="sm" className="rounded-full">
                   <Link to="#">
                     <span>Login</span>
                   </Link>
                 </Button>
-                <Button asChild size="sm">
+                <Button asChild size="sm" className="rounded-full">
                   <Link to="#">
                     <span>Sign Up</span>
                   </Link>
