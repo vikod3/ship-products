@@ -68,7 +68,8 @@ export function HeroContent() {
         <div className="px-8 md:px-12 lg:px-16">
           <LettersPullUp 
             text="Ship Products 10x Faster" 
-            className="text-4xl font-normal text-foreground sm:text-5xl md:text-6xl xl:text-7xl flex-wrap"
+            className="text-4xl font-normal text-foreground sm:text-5xl md:text-6xl xl:text-7xl"
+            wrapWords
           />
           
           <motion.p 
