@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import Hls from 'hls.js';
+import { LettersPullUp } from '@/components/ui/letters-pull-up';
+import { motion } from 'framer-motion';
 
 export function HeroContent() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,6 +34,19 @@ export function HeroContent() {
     }
   }, []);
 
+  const fadeUpVariants = {
+    initial: { y: 20, opacity: 0 },
+    animate: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 1.2 + i * 0.15,
+        duration: 0.5,
+        ease: [0.25, 0.4, 0.25, 1] as const,
+      },
+    }),
+  };
+
   return (
     <section className="relative min-h-[90vh]">
       {/* Video Background Card */}
@@ -51,14 +66,28 @@ export function HeroContent() {
       {/* Content - Positioned at bottom left */}
       <div className="relative z-10 flex min-h-[90vh] flex-col justify-end pb-16 md:pb-20 lg:pb-24">
         <div className="px-8 md:px-12 lg:px-16">
-          <h1 className="whitespace-nowrap text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl xl:text-7xl">
-            Ship Products 10x Faster
-          </h1>
-          <p className="mt-10 max-w-md text-lg text-muted-foreground">
+          <LettersPullUp 
+            text="Ship Products 10x Faster" 
+            className="whitespace-nowrap text-4xl font-normal text-foreground sm:text-5xl md:text-6xl xl:text-7xl"
+          />
+          
+          <motion.p 
+            variants={fadeUpVariants}
+            initial="initial"
+            animate="animate"
+            custom={0}
+            className="mt-10 max-w-md text-lg text-muted-foreground"
+          >
             Premium UI blocks crafted for developers who value speed, precision, and beautiful design.
-          </p>
+          </motion.p>
 
-          <div className="mt-12 flex flex-row items-center gap-3">
+          <motion.div 
+            variants={fadeUpVariants}
+            initial="initial"
+            animate="animate"
+            custom={1}
+            className="mt-12 flex flex-row items-center gap-3"
+          >
             <Button asChild variant="hero" className="rounded-full">
               <Link to="#" className="rounded-full">
                 <span className="text-nowrap">Start Building</span>
@@ -70,7 +99,7 @@ export function HeroContent() {
                 <span className="text-nowrap">Request a demo</span>
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
