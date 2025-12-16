@@ -68,7 +68,7 @@ export function HeroContent() {
         <div className="px-8 md:px-12 lg:px-16">
           <LettersPullUp 
             text="Ship Products 10x Faster" 
-            className="whitespace-nowrap text-4xl font-normal text-foreground sm:text-5xl md:text-6xl xl:text-7xl"
+            className="text-4xl font-normal text-foreground sm:text-5xl md:text-6xl xl:text-7xl flex-wrap"
           />
           
           <motion.p 
@@ -86,7 +86,7 @@ export function HeroContent() {
             initial="initial"
             animate="animate"
             custom={1}
-            className="mt-12 flex flex-row items-center gap-3"
+            className="mt-12 flex flex-col items-start gap-3 sm:flex-row sm:items-center"
           >
             <Button asChild variant="hero" className="rounded-full">
               <Link to="#" className="rounded-full">
