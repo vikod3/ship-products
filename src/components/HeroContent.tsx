@@ -51,11 +51,11 @@ export function HeroContent() {
       {/* Content - Positioned at bottom left */}
       <div className="relative z-10 flex min-h-[90vh] flex-col justify-end pb-16 md:pb-20 lg:pb-24">
         <div className="px-8 md:px-12 lg:px-16">
-          <h1 className="whitespace-nowrap text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl xl:text-7xl">
-            Build 10x Faster with NS
+          <h1 className="whitespace-nowrap text-4xl font-medium tracking-tight text-foreground sm:text-5xl md:text-6xl xl:text-7xl">
+            Ship Products 10x Faster
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Highly customizable components for building modern websites and applications you mean it.
+          <p className="mt-6 max-w-md text-lg text-muted-foreground">
+            Premium UI blocks crafted for developers who value speed, precision, and beautiful design.
           </p>
 
           <div className="mt-8 flex flex-row items-center gap-3">
