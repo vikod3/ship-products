@@ -10,7 +10,7 @@ export function Logo({ className }: LogoProps) {
     <img 
       src={logoImage} 
       alt="Logo" 
-      className={cn('h-8 w-auto', className)} 
+      className={cn('h-6 w-auto', className)} 
     />
   );
 }
