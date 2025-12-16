@@ -54,11 +54,11 @@ export function HeroContent() {
           <h1 className="whitespace-nowrap text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl xl:text-7xl">
             Ship Products 10x Faster
           </h1>
-          <p className="mt-8 max-w-md text-lg text-muted-foreground">
+          <p className="mt-10 max-w-md text-lg text-muted-foreground">
             Premium UI blocks crafted for developers who value speed, precision, and beautiful design.
           </p>
 
-          <div className="mt-10 flex flex-row items-center gap-3">
+          <div className="mt-12 flex flex-row items-center gap-3">
             <Button asChild variant="hero" className="rounded-full">
               <Link to="#" className="rounded-full">
                 <span className="text-nowrap">Start Building</span>
