@@ -59,8 +59,8 @@ export function HeroContent() {
           </p>
 
           <div className="mt-8 flex flex-row items-center gap-3">
-            <Button asChild size="lg" variant="hero">
-              <Link to="#">
+            <Button asChild variant="hero" className="rounded-full">
+              <Link to="#" className="rounded-full">
                 <span className="text-nowrap">Start Building</span>
                 <ChevronRight className="ml-1 size-4" />
               </Link>
