@@ -48,18 +48,18 @@ export function HeroContent() {
         <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
       </div>
 
-      {/* Content - Positioned at bottom */}
+      {/* Content - Positioned at bottom left */}
       <div className="relative z-10 flex min-h-[90vh] flex-col justify-end pb-16 md:pb-20 lg:pb-24">
-        <div className="mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
-          <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-            <h1 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-foreground md:text-6xl xl:text-7xl">
+        <div className="mx-auto flex max-w-7xl flex-col px-6 lg:px-12">
+          <div className="max-w-full text-left">
+            <h1 className="whitespace-nowrap text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl xl:text-7xl">
               Build 10x Faster with NS
             </h1>
-            <p className="mt-6 max-w-2xl text-balance text-lg text-muted-foreground">
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
               Highly customizable components for building modern websites and applications you mean it.
             </p>
 
-            <div className="mt-8 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+            <div className="mt-8 flex flex-row items-center gap-2">
               <Button asChild size="lg" variant="hero">
                 <Link to="#">
                   <span className="text-nowrap">Start Building</span>
