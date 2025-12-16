@@ -1,22 +1,50 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ChevronRight } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import Hls from 'hls.js';
 
 export function HeroContent() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const videoSrc = 'https://customer-cbeadsgr09pnsezs.cloudflarestream.com/e81db7751c9ff8adfd5a0b4daaf7e65f/manifest/video.m3u8';
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play().catch(() => {});
+      });
+
+      return () => {
+        hls.destroy();
+      };
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      // Safari native HLS support
+      video.src = videoSrc;
+      video.addEventListener('loadedmetadata', () => {
+        video.play().catch(() => {});
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-[90vh]">
       {/* Video Background Card */}
       <div className="absolute inset-4 top-2 overflow-hidden rounded-3xl border border-foreground/10 bg-card lg:rounded-[3rem]">
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          poster="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920&q=80"
           className="size-full object-cover opacity-60 lg:opacity-80"
-        >
-          <source src="https://ik.imagekit.io/lrigu76hy/tailark/dna-video.mp4?updatedAt=1745736251477" type="video/mp4" />
-        </video>
+        />
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
       </div>
