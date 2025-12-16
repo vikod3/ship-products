@@ -65,7 +65,7 @@ export function HeroContent() {
                 <ChevronRight className="ml-1 size-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="ghost" className="h-14 rounded-full px-8 text-lg hover:bg-foreground/5">
+            <Button asChild size="lg" variant="ghost" className="h-16 rounded-full px-10 text-lg hover:bg-foreground/5">
               <Link to="#">
                 <span className="text-nowrap">Request a demo</span>
               </Link>
