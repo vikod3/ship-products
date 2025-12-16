@@ -29,7 +29,7 @@ export function HeroHeader() {
     <header>
       <nav
         data-state={menuState && 'active'}
-        className="group fixed z-20 w-full pt-2"
+        className="group fixed z-20 w-full pt-6"
       >
         <div className="px-8 md:px-12 lg:px-16">
           <motion.div
