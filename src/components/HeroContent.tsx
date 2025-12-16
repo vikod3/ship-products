@@ -25,7 +25,6 @@ export function HeroContent() {
         hls.destroy();
       };
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      // Safari native HLS support
       video.src = videoSrc;
       video.addEventListener('loadedmetadata', () => {
         video.play().catch(() => {});
@@ -46,21 +45,21 @@ export function HeroContent() {
           className="size-full object-cover opacity-60 lg:opacity-80"
         />
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/60 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 py-24 md:pb-32 lg:pb-36 lg:pt-44">
+      {/* Content - Positioned at bottom */}
+      <div className="relative z-10 flex min-h-[90vh] flex-col justify-end pb-16 md:pb-20 lg:pb-24">
         <div className="mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
           <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
-            <h1 className="mt-8 max-w-2xl text-balance text-5xl font-semibold tracking-tight text-foreground md:text-6xl lg:mt-16 xl:text-7xl">
+            <h1 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-foreground md:text-6xl xl:text-7xl">
               Build 10x Faster with NS
             </h1>
-            <p className="mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
+            <p className="mt-6 max-w-2xl text-balance text-lg text-muted-foreground">
               Highly customizable components for building modern websites and applications you mean it.
             </p>
 
-            <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+            <div className="mt-8 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
               <Button asChild size="lg" variant="hero">
                 <Link to="#">
                   <span className="text-nowrap">Start Building</span>
