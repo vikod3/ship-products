@@ -88,7 +88,7 @@ export function HeroContent() {
             custom={1}
             className="mt-12 flex flex-row items-center gap-3"
           >
-            <Button asChild variant="hero" className="rounded-full font-normal">
+            <Button asChild variant="hero" className="rounded-full">
               <Link to="#" className="rounded-full">
                 <span className="text-nowrap">Start Shipping</span>
                 <ChevronRight className="ml-1 size-4" />
